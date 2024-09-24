@@ -23,9 +23,9 @@ Welcome to the CV Application project! This application allows users to input th
 4. Running the Application
    npm run dev
 
-### Usage
+## Usage
 Users can enter their information into the provided fields, then click the submit button to display their CV. The edit button allows them to modify their previously entered data.
 
-###Author
+### Author
 Sulaiman Rabiu- https://github.com/Sulaymancodes
 
