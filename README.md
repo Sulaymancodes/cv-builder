@@ -17,10 +17,13 @@ Welcome to the CV Application project! This application allows users to input th
    ```bash
    git clone https://github.com/Sulaymancodes/cv-builder.git
 2. Navigate to the project directory
+   ```bash
    cd cv-builder
-3. Install the dependencies
+4. Install the dependencies
+   ```bash
    npm install
-4. Running the Application
+6. Running the Application
+   ```bash
    npm run dev
 
 ## Usage
