@@ -15,7 +15,7 @@ Welcome to the CV Application project! This application allows users to input th
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/cv-builder.git
+   git clone https://github.com/Sulaymancodes/cv-builder.git
 2. Navigate to the project directory
    cd cv-builder
 3. Install the dependencies
