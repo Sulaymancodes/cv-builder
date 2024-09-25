@@ -1,20 +1,21 @@
 
-export default function App() {
+import { useState } from "react";
+import FullNameFunc from "./components/general-info";
+
+export default function App () {
+  const [fullName ,setFullName] = useState('John Doe')
+  function onChangeFullName (e) {
+      setFullName(e.target.value)
+  }
+
   return (
-    <>
-     <h1 className="flex text-5xl font-bold color justify-center">
-     Hello world!
-     </h1>
-     <br></br>
-     <div className="flex justify-center">
-      <div className="w-40 h-9 bg-blue-400 rounded mr-5">
-        <p className="text-center">Blue</p>
-      </div>
-      <div className="w-40 h-9 bg-red-400 rounded hover:bg-sky-700">
-        <p className="text-center">Red</p>
-      </div>
-     </div>
-    </>
-    
+    <div>
+      <FullNameFunc 
+        fullName={fullName}
+        onChangeFullName={onChangeFullName}
+      />
+      <p>{fullName}</p>
+      
+    </div>
   )
 }
