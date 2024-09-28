@@ -1,5 +1,5 @@
 
-function FullNameFunc({ fullName, updateFullName }) {
+function FullNameFunc({fullName, updateFullName}) {
     return (
       <div>
         <label>
@@ -61,4 +61,19 @@ function EmailFunc ({email, updateEmail}) {
     )
 }
 
-export {FullNameFunc , AddressFunc, PhoneNOFunc, EmailFunc}
+function ObjectiveFunc ({objective, updateObjective}) {
+  return (
+      <div>
+          <label>
+           Objective:
+           <textarea
+            value={objective}
+            onChange={updateObjective}
+            rows="4"
+            cols="50"
+           />
+        </label>
+      </div>
+  )
+}
+export {FullNameFunc , AddressFunc, PhoneNOFunc, EmailFunc, ObjectiveFunc}
