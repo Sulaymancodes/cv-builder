@@ -1,73 +1,64 @@
 
-// FullNameFunc.jsx
-export default function FullNameFunc({ fullName, onChangeFullName }) {
+function FullNameFunc({ fullName, updateFullName }) {
     return (
       <div>
         <label>
           Full Name:
           <input
             type="text"
-            value={fullName} // Bind the fullName value to the input
-            onChange={onChangeFullName} // Call onChangeFullName when the input value changes
+            value={fullName} 
+            onChange={updateFullName}
+            className="bg-red-500"
           />
         </label>
       </div>
     );
 }
   
-function Address ({address, addressUpdate}) {
+function AddressFunc ({address, updateAddress}) {
     return (
         <div>
             <label>
              Address:
              <input
                type="text"
-               value={name}>
-             </input>
+               value={address}
+               onChange={updateAddress}
+             />
           </label>
         </div>
     )
 }
 
-// function Address ({address, addressUpdate}) {
-//     return (
-//         <div>
-//             <label>
-//              Address:
-//              <input
-//                type="text"
-//                value={name}>
-//              </input>
-//           </label>
-//         </div>
-//     )
-// }
 
-// function PhoneNO ({phoneNo, phoneNoUpdate}) {
-//     return (
-//         <div>
-//             <label>
-//              Phone-No:
-//              <input
-//                type="text"
-//                value={name}>
-//              </input>
-//           </label>
-//         </div>
-//     )
-// }
+function PhoneNOFunc ({phoneNo, updatePhoneNo}) {
+    return (
+        <div>
+            <label>
+             Phone-No:
+             <input
+               type="text"
+               value={phoneNo}
+               onChange={updatePhoneNo}
+             />
+          </label>
+        </div>
+    )
+}
 
-// function Email ({email, emailUpdate}) {
-//     return (
-//         <div>
-//             <label>
-//              Email:
-//              <input
-//                type="text"
-//                value={name}>
-//              </input>
-//           </label>
-//         </div>
-//     )
-// }
+function EmailFunc ({email, updateEmail}) {
+    return (
+        <div>
+            <label>
+             Email:
+             <input
+               type="text"
+               value={email}
+               onChange={updateEmail}
+             />
+          </label>
+        </div>
+    )
+}
 
+export {FullNameFunc , AddressFunc, PhoneNOFunc, EmailFunc}
