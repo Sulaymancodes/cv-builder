@@ -3,6 +3,8 @@ import { FullNameFunc, AddressFunc, PhoneNOFunc , EmailFunc, ObjectiveFunc } fro
 import { SchoolFunc, DegreeFunc, StartDateFunc, EndDateFunc } from "./components/education";
 import { CompanyNameFunc, PositionFunc, ExperienceStartDateFunc, ExperienceEndDateFunc, DescriptionFunc } from "./components/experience";
 import { SkillNameFunc, SkillDetailsFunc } from "./components/skills";
+import { ProjectNameFunc, ProjectDetailsFunc } from "./components/projects";
+import { ReferenceName, ReferenceTitle, ReferenceMail } from "./components/references";
 
 const objectiveText = 'Highly skilled and motivated Software Engineer with 5+ years of experience in designing and developing innovative software solutions. Seeking a challenging position in a dynamic organization where I can utilize my technical expertise and leadership skills to contribute to the success of the team'
 const descriptionText = 'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android'
@@ -31,6 +33,15 @@ export default function App () {
   //CV skills Info State
   const [skillName, setSkillName] = useState('Web Development')
   const [skillDetails, setSkillDetails] = useState('HTML, CSS, JavaScript, PHP')
+
+  //CV project Info state
+  const [projectName, setProjectName] = useState('E-Commerce WepApp')
+  const [projectDetails, setProjectDetails] = useState('Developed a fully functional e-commerce website using Java Spring framework, MySQL database, and React frontend')
+
+  //CV project Reference State
+  const [referenceName, setReferenceName] = useState('Mr. John Doe')
+  const [referenceTitle, setReferenceTitle] = useState('Prof. at XYZ University')
+  const [referenceMail, setReferenceMail] = useState('johndoe123@gmail.com')
 
   return (
     <div>
@@ -98,6 +109,26 @@ export default function App () {
         skillDetails={skillDetails}
         updateSkillDetails={(e) => setSkillDetails(e.target.value)}
       />
+      <ProjectNameFunc
+        projectName={projectName}
+        updateProjectName={(e) => setProjectName(e.target.value)}
+      />
+      <ProjectDetailsFunc
+        projectDetails={projectDetails}
+        updateProjectDetails={(e) => setProjectDetails(e.target.value)}
+      />
+      <ReferenceName
+        referenceName={referenceName}
+        updateReferenceName={(e) => setReferenceName(e.target.value)}
+      />
+      <ReferenceTitle
+        referenceTitle={referenceTitle}
+        updateReferenceTitle={(e) => setReferenceTitle(e.target.value)}
+      />
+      <ReferenceMail
+        referenceMail={referenceMail}
+        updateReferenceMail={(e) => setReferenceMail(e.target.value)}
+      />
 
       <p>{fullName}</p>
       <p>{address}</p>
@@ -115,7 +146,12 @@ export default function App () {
       <p>{experienceStartDate}</p>
       <p>{experienceEndDate}</p>
       <p>{description}</p>
+      <br />
       <p>{skillName}: {skillDetails}</p>
+      <br />
+      <p>{projectName}: {projectDetails}</p>
+      <br />
+      <p>{referenceName}: {referenceTitle} Mail:{referenceMail}</p>
     </div>
   )
 }
