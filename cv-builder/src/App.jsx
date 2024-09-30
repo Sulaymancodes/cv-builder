@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import html2pdf from 'html2pdf.js';
 import { FullNameFunc, AddressFunc, PhoneNOFunc , EmailFunc, ObjectiveFunc } from "./components/general-info";
 import { SchoolFunc, DegreeFunc, StartDateFunc, EndDateFunc } from "./components/education";
 import { CompanyNameFunc, PositionFunc, ExperienceStartDateFunc, ExperienceEndDateFunc, DescriptionFunc } from "./components/experience";
@@ -6,10 +7,34 @@ import { SkillNameFunc, SkillDetailsFunc } from "./components/skills";
 import { ProjectNameFunc, ProjectDetailsFunc } from "./components/projects";
 import { ReferenceName, ReferenceTitle, ReferenceMail } from "./components/references";
 
+
 const objectiveText = 'Highly skilled and motivated Software Engineer with 5+ years of experience in designing and developing innovative software solutions. Seeking a challenging position in a dynamic organization where I can utilize my technical expertise and leadership skills to contribute to the success of the team'
 const descriptionText = 'Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android'
 
 export default function App () {
+  const cvRef = useRef(); // Create a reference for the CV section
+  const [isDownloading, setIsDownloading] = useState(false); // State to track download
+
+  const handleDownload = () => {
+    setIsDownloading(true); // Set state to true before downloading
+    const element = cvRef.current; // Get the CV section element
+    const options = {
+      margin: 0.5,
+      filename: 'cv.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+
+    // Use html2pdf to convert the element to PDF
+    html2pdf()
+      .from(element)
+      .set(options)
+      .save()
+      .then(() => {
+        setIsDownloading(false); // Reset state after download
+      });
+  };
   //CV general Info States
   const [fullName, setFullName] = useState('John Doe')
   const [address, setAddress] = useState('123, Main Street, New-York, USA')
@@ -180,7 +205,7 @@ export default function App () {
       </div>
   
       {/* CV Preview Section */}
-      <div className="md:col-span-5 bg-white shadow-md overflow-auto h-screen">
+      <div ref={cvRef} className="md:col-span-5 bg-white shadow-md overflow-auto h-screen">
         <div className="text-center bg-customBlue py-6 text-white">
           <p className="text-3xl md:text-4xl my-4 font-bold">{fullName}</p>
           <p>{address} \ {phoneNo} \ {email}</p>
@@ -215,9 +240,16 @@ export default function App () {
             </li> 
           ))}
         </div>
-        
+  
+        <div className="text-center my-4">
+          <button 
+            onClick={handleDownload} 
+            className={`rounded-lg bg-sky-500 hover:bg-sky-700 p-2 ${isDownloading ? 'hidden' : ''}`}>
+            Download CV as PDF
+          </button>
+        </div>
       </div>
-      
     </div>
-  )
+ );
 }
+  
