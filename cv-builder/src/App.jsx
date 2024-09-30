@@ -33,24 +33,41 @@ export default function App () {
   //CV skills Info State
   const [skillName, setSkillName] = useState('Web Development')
   const [skillDetails, setSkillDetails] = useState('HTML, CSS, JavaScript, PHP')
-
+  const [submittedSkills, setSubmittedSkills] = useState([]);
   //CV project Info state
   const [projectName, setProjectName] = useState('E-Commerce WepApp')
   const [projectDetails, setProjectDetails] = useState('Developed a fully functional e-commerce website using Java Spring framework, MySQL database, and React frontend')
+  const [submittedProject, setSubmittedProject] = useState([]);
 
   //CV project Reference State
   const [referenceName, setReferenceName] = useState('Mr. John Doe')
   const [referenceTitle, setReferenceTitle] = useState('Prof. at XYZ University')
   const [referenceMail, setReferenceMail] = useState('johndoe123@gmail.com')
+  const [submittedReference, setSubmittedReference] = useState([]);
+
+  const handleSkillSubmit = () => {
+    const newSkill = { name: skillName, details: skillDetails }; 
+    setSubmittedSkills([...submittedSkills, newSkill]); 
+  };
+
+  const handleProjectSubmit = () => {
+    const newProject = { name: projectName, details: projectDetails }; 
+    setSubmittedProject([...submittedProject, newProject]); 
+  };
+
+  const handleReferenceSubmit = () => {
+    const newReference = { name: referenceName, title: referenceTitle, mail: referenceMail }; 
+    setSubmittedReference([...submittedReference, newReference]); 
+  };
 
   return (
-    <div className="grid grid-cols-7 gap-4 bg-slate-50 h-screen">
-      <div className="col-span-2 p-2 bg-slate-50 rounded-md overflow-auto">
-        <h1 className="text-3xl text-center font-bold mb-4">CV BUILDER 🖋️</h1>
-        <hr className="border-gray-500" />
+    <div className="grid grid-cols-7 gap-4 bg-gray-500 h-screen">
+      <div className="col-span-2 p-2 bg-gray-500 rounded-md overflow-auto shadow-md">
+        <h1 className="text-3xl text-center font-bold shadow-md p-4 text-white">CV BUILDER</h1>
         <br />
-        <div className="p-4 bg-slate-200 rounded-md">
+        <div className="p-4 bg-slate-200 rounded-md shadow-md">
           <h1 className="font-bold text-xl text-center">General Info 🪪</h1>
+          <hr className="border-gray-500 my-2" />
           <p className="font-bold">Full Name</p>
           <FullNameFunc 
             fullName={fullName}
@@ -78,8 +95,9 @@ export default function App () {
           />
         </div>
         
-        <div className="p-4 bg-slate-200 rounded-md mt-2">
+        <div className="p-4 bg-slate-200 rounded-md mt-2 shadow-md">
           <h1 className="font-bold text-xl text-center">Educational Experience 🎓</h1>
+          <hr className="border-gray-500 my-2" />
           <p className="font-bold">School</p>
           <SchoolFunc
             school={school}
@@ -102,8 +120,9 @@ export default function App () {
           />
         </div>
         
-        <div className="p-4 bg-slate-200 rounded-md mt-2">
+        <div className="p-4 bg-slate-200 rounded-md mt-2 shadow-md">
           <h1 className="font-bold text-xl text-center">Work Experience 👷</h1>
+          <hr className="border-gray-500 my-2" />
           <p className="font-bold">Company Name</p>
           <CompanyNameFunc
             company={companyName}
@@ -131,8 +150,9 @@ export default function App () {
           />
         </div>
 
-        <div className="p-4 bg-slate-200 rounded-md mt-2">
+        <div className="p-4 bg-slate-200 rounded-md mt-2 shadow-md">
           <h1 className="font-bold text-xl text-center">Skills 🔨</h1>
+          <hr className="border-gray-500 my-2" />
           <p className="font-bold">Skill</p>
           <SkillNameFunc
             skillName={skillName}
@@ -143,10 +163,15 @@ export default function App () {
             skillDetails={skillDetails}
             updateSkillDetails={(e) => setSkillDetails(e.target.value)}
           />
+          <div className="text-center">
+            <button  onClick={handleSkillSubmit} className="rounded-lg w-full bg-sky-500 hover:bg-sky-700 p-2 mt-2">Add More</button>
+          </div>
+          
         </div>
         
-        <div className="p-4 bg-slate-200 rounded-md mt-2">
+        <div className="p-4 bg-slate-200 rounded-md mt-2 shadow-md">
           <h1 className="font-bold text-xl text-center">Projects 🏢</h1>
+          <hr className="border-gray-500 my-2" />
           <p className="font-bold">Project Name</p>
           <ProjectNameFunc
             projectName={projectName}
@@ -157,9 +182,13 @@ export default function App () {
             projectDetails={projectDetails}
             updateProjectDetails={(e) => setProjectDetails(e.target.value)}
           />
+          <div className="text-center">
+            <button onClick={handleProjectSubmit} className="rounded-lg w-full bg-sky-500 hover:bg-sky-700 p-2 mt-2">Add More</button>
+          </div>
         </div>
-        <div className="p-4 bg-slate-200 rounded-md mt-2">
+        <div className="p-4 bg-slate-200 rounded-md mt-2 shadow-md">
           <h1 className="font-bold text-xl text-center">References 👨‍🎓</h1>
+          <hr className="border-gray-500 my-2" />
           <p className="font-bold">Reference Name</p>
           <ReferenceName
             referenceName={referenceName}
@@ -175,32 +204,56 @@ export default function App () {
             referenceMail={referenceMail}
             updateReferenceMail={(e) => setReferenceMail(e.target.value)}
           />
+          <div className="text-center">
+            <button onClick={handleReferenceSubmit} className="rounded-lg w-full bg-sky-500 hover:bg-sky-700 p-2 mt-2">Add More</button>
+          </div>
         </div>
         
       </div>
-      <div className="col-span-5">
-        <p>{fullName}</p>
-        <p>{address}</p>
-        <p>{phoneNo}</p>
-        <p>{email}</p>
-        <p>{objective}</p>
-        <br />
-        <p>{school}</p>
-        <p>{degree}</p>
-        <p>{startDate}</p>
-        <p>{endDate}</p>
-        <br />
-        <p>{companyName}</p>
-        <p>{position}</p>
-        <p>{experienceStartDate}</p>
-        <p>{experienceEndDate}</p>
-        <p>{description}</p>
-        <br />
-        <p>{skillName}: {skillDetails}</p>
-        <br />
-        <p>{projectName}: {projectDetails}</p>
-        <br />
-        <p>{referenceName}: {referenceTitle} Mail:{referenceMail}</p>
+      <div className="col-span-5  bg-white shadow-md overflow-auto">
+        <div className="text-center bg-customBlue py-6 text-white ">
+          <p className="text-4xl my-4 font-bold">{fullName}</p>
+          <p>{address} \ {phoneNo} \ {email}</p>
+        </div>
+
+        <div className="p-4 mb-4">
+          <p className="font-bold text-lg">Objective</p>
+          <p>{objective}</p>
+          <br />
+          <p className="font-bold text-lg">Education</p>
+          <p>{school}</p>
+          <p>{degree} from {startDate} to {endDate}</p>
+          <br />
+          <p className="font-bold text-lg">Work Experience</p>
+          <p>{position} at {companyName}, from {experienceStartDate} to {experienceEndDate}</p>
+          <li className="ml-4">{description}</li>
+
+          <br />
+          <p className="font-bold text-lg">Skills</p>
+          <li className="ml-4">{skillName}: {skillDetails}</li>
+          {submittedSkills.map((skill, index) => (
+          <li key={index} className="ml-4">
+            {skill.name}: {skill.details}
+          </li>
+          ))}
+          <br />
+          <p className="font-bold text-lg">Projects</p>
+          <li className="ml-4">{projectName}: {projectDetails}</li>
+          {submittedProject.map((project, index) => (
+          <li key={index} className="ml-4">
+            {project.name}: {project.details}
+          </li>
+          ))}
+          <br />
+          <p className="font-bold text-lg">References</p>
+          <li className="ml-4">{referenceName}, {referenceTitle}, {referenceMail}</li>
+          {submittedReference.map((reference, index) => (
+            <li key={index} className="ml-4">
+              {reference.name}, {reference.title}, {reference.mail}
+            </li> 
+          ))}
+        </div>
+        
       </div>
       
     </div>

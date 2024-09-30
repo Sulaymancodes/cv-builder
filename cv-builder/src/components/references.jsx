@@ -2,7 +2,6 @@ function ReferenceName({referenceName, updateReferenceName}) {
     return (
       <div>
         <label>
-          Reference Name:
           <input
             type="text"
             value={referenceName} 
@@ -18,7 +17,6 @@ function ReferenceTitle({referenceTitle, updateReferenceTitle}) {
     return (
       <div>
         <label>
-          Reference Title:
           <input
             type="text"
             value={referenceTitle} 
@@ -34,7 +32,6 @@ function ReferenceMail({referenceMail, updateReferenceMail}) {
   return (
     <div>
       <label>
-        Reference Mail:
         <input
           type="email"
           value={referenceMail} 
