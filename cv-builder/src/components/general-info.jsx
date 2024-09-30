@@ -3,12 +3,11 @@ function FullNameFunc({fullName, updateFullName}) {
     return (
       <div>
         <label>
-          Full Name:
           <input
+            className="p-1 rounded-md w-full bg-slate-50"
             type="text"
             value={fullName} 
             onChange={updateFullName}
-            className="bg-red-500"
           />
         </label>
       </div>
@@ -19,8 +18,8 @@ function AddressFunc ({address, updateAddress}) {
     return (
         <div>
             <label>
-             Address:
              <input
+               className="p-1 rounded-md w-full bg-slate-50"
                type="text"
                value={address}
                onChange={updateAddress}
@@ -35,8 +34,8 @@ function PhoneNOFunc ({phoneNo, updatePhoneNo}) {
     return (
         <div>
             <label>
-             Phone-No:
              <input
+               className="p-1 rounded-md w-full bg-slate-50"
                type="text"
                value={phoneNo}
                onChange={updatePhoneNo}
@@ -50,8 +49,8 @@ function EmailFunc ({email, updateEmail}) {
     return (
         <div>
             <label>
-             Email:
              <input
+               className="p-1 rounded-md w-full bg-slate-50"
                type="text"
                value={email}
                onChange={updateEmail}
@@ -65,8 +64,8 @@ function ObjectiveFunc ({objective, updateObjective}) {
   return (
       <div>
           <label>
-           Objective:
            <textarea
+            className="p-1 rounded-md w-full bg-slate-50"
             value={objective}
             onChange={updateObjective}
             rows="4"

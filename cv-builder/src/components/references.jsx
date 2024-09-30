@@ -7,7 +7,7 @@ function ReferenceName({referenceName, updateReferenceName}) {
             type="text"
             value={referenceName} 
             onChange={updateReferenceName}
-            className="bg-yellow-500"
+            className="p-1 rounded-md w-full bg-slate-50"
           />
         </label>
       </div>
@@ -23,7 +23,7 @@ function ReferenceTitle({referenceTitle, updateReferenceTitle}) {
             type="text"
             value={referenceTitle} 
             onChange={updateReferenceTitle}
-            className="bg-yellow-500"
+            className="p-1 rounded-md w-full bg-slate-50"
           />
         </label>
       </div>
@@ -39,7 +39,7 @@ function ReferenceMail({referenceMail, updateReferenceMail}) {
           type="email"
           value={referenceMail} 
           onChange={updateReferenceMail}
-          className="bg-yellow-500"
+          className="p-1 rounded-md w-full bg-slate-50"
         />
       </label>
     </div>

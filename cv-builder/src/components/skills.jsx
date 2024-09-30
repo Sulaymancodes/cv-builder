@@ -2,12 +2,11 @@ function SkillNameFunc({skillName, updateSkillName}) {
     return (
       <div>
         <label>
-          Skill Name:
           <input
             type="text"
             value={skillName} 
             onChange={updateSkillName}
-            className="bg-pink-500"
+            className="p-1 rounded-md w-full bg-slate-50"
           />
         </label>
       </div>
@@ -18,12 +17,11 @@ function SkillDetailsFunc({skillDetails, updateSkillDetails}) {
     return (
       <div>
         <label>
-          Skill Details:
           <input
             type="text"
             value={skillDetails} 
             onChange={updateSkillDetails}
-            className="bg-pink-500"
+            className="p-1 rounded-md w-full bg-slate-50"
           />
         </label>
       </div>

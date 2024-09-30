@@ -44,114 +44,165 @@ export default function App () {
   const [referenceMail, setReferenceMail] = useState('johndoe123@gmail.com')
 
   return (
-    <div>
-      <FullNameFunc 
-        fullName={fullName}
-        updateFullName={(e) => setFullName(e.target.value)}
-      />
-      <AddressFunc
-        address={address}
-        updateAddress={(e) => setAddress(e.target.value)}
-      />
-      <PhoneNOFunc
-        phoneNo={phoneNo}
-        updatePhoneNo={(e) => setPhoneNo(e.target.value)} 
-      />
-      <EmailFunc
-        email={email}
-        updateEmail={(e) => setEmail(e.target.value)}
-      />
-      <ObjectiveFunc
-        objective={objective}
-        updateObjective={(e) => setObjective(e.target.value)}
-      />
-      <SchoolFunc
-        school={school}
-        updateSchool={(e) => setSchool(e.target.value)}
-      />
-      <DegreeFunc
-        degree={degree}
-        updateDegree={(e) => setDegree(e.target.value)}
-      />
-      <StartDateFunc
-        startDate={startDate}
-        updateStartDate={(e) => setStartDate(e.target.value)}
-      />
-      <EndDateFunc
-        endDate={endDate}
-        updateEndDate={(e) => setEndDate(e.target.value)}
-      />
-      <CompanyNameFunc
-        company={companyName}
-        updateCompany={(e) => setCompanyName(e.target.value)}
-      />
-      <PositionFunc
-        position={position}
-        updatePosition={(e) => setPosition(e.target.value)}
-      />
-      <ExperienceStartDateFunc
-        experienceStartDate={experienceStartDate}
-        updateExperienceStartDate={(e) => setExperienceStartDate(e.target.value)}
-      />
-      <ExperienceEndDateFunc
-        experienceEndDate={experienceEndDate}
-        updateExperienceEndDate={(e) => setExperienceEndDate(e.target.value)}
-      />
-      <DescriptionFunc
-        description={description}
-        updateDescription={(e) => setDescription(e.target.value)}
-      />
-      <SkillNameFunc
-        skillName={skillName}
-        updateSkillName={(e) => setSkillName(e.target.value)}
-      />
-      <SkillDetailsFunc
-        skillDetails={skillDetails}
-        updateSkillDetails={(e) => setSkillDetails(e.target.value)}
-      />
-      <ProjectNameFunc
-        projectName={projectName}
-        updateProjectName={(e) => setProjectName(e.target.value)}
-      />
-      <ProjectDetailsFunc
-        projectDetails={projectDetails}
-        updateProjectDetails={(e) => setProjectDetails(e.target.value)}
-      />
-      <ReferenceName
-        referenceName={referenceName}
-        updateReferenceName={(e) => setReferenceName(e.target.value)}
-      />
-      <ReferenceTitle
-        referenceTitle={referenceTitle}
-        updateReferenceTitle={(e) => setReferenceTitle(e.target.value)}
-      />
-      <ReferenceMail
-        referenceMail={referenceMail}
-        updateReferenceMail={(e) => setReferenceMail(e.target.value)}
-      />
+    <div className="grid grid-cols-7 gap-4 bg-slate-50 h-screen">
+      <div className="col-span-2 p-2 bg-slate-50 rounded-md overflow-auto">
+        <h1 className="text-3xl text-center font-bold mb-4">CV BUILDER 🖋️</h1>
+        <hr className="border-gray-500" />
+        <br />
+        <div className="p-4 bg-slate-200 rounded-md">
+          <h1 className="font-bold text-xl text-center">General Info 🪪</h1>
+          <p className="font-bold">Full Name</p>
+          <FullNameFunc 
+            fullName={fullName}
+            updateFullName={(e) => setFullName(e.target.value)}
+          />
+          <p className="font-bold">Address</p>
+          <AddressFunc
+            address={address}
+            updateAddress={(e) => setAddress(e.target.value)}
+          />
+          <p className="font-bold">Phone No</p>
+          <PhoneNOFunc
+            phoneNo={phoneNo}
+            updatePhoneNo={(e) => setPhoneNo(e.target.value)} 
+          />
+          <p className="font-bold">Email</p>
+          <EmailFunc
+            email={email}
+            updateEmail={(e) => setEmail(e.target.value)}
+          />
+          <p className="font-bold">Objectives</p>
+          <ObjectiveFunc
+            objective={objective}
+            updateObjective={(e) => setObjective(e.target.value)}
+          />
+        </div>
+        
+        <div className="p-4 bg-slate-200 rounded-md mt-2">
+          <h1 className="font-bold text-xl text-center">Educational Experience 🎓</h1>
+          <p className="font-bold">School</p>
+          <SchoolFunc
+            school={school}
+            updateSchool={(e) => setSchool(e.target.value)}
+          />
+          <p className="font-bold">Degree</p>
+          <DegreeFunc
+            degree={degree}
+            updateDegree={(e) => setDegree(e.target.value)}
+          />
+          <p className="font-bold">Start Date</p>
+          <StartDateFunc
+            startDate={startDate}
+            updateStartDate={(e) => setStartDate(e.target.value)}
+          />
+          <p className="font-bold">End Date</p>
+          <EndDateFunc
+            endDate={endDate}
+            updateEndDate={(e) => setEndDate(e.target.value)}
+          />
+        </div>
+        
+        <div className="p-4 bg-slate-200 rounded-md mt-2">
+          <h1 className="font-bold text-xl text-center">Work Experience 👷</h1>
+          <p className="font-bold">Company Name</p>
+          <CompanyNameFunc
+            company={companyName}
+            updateCompany={(e) => setCompanyName(e.target.value)}
+          />
+          <p className="font-bold">Position</p>
+          <PositionFunc
+            position={position}
+            updatePosition={(e) => setPosition(e.target.value)}
+          />
+          <p className="font-bold">Start Date</p>
+          <ExperienceStartDateFunc
+            experienceStartDate={experienceStartDate}
+            updateExperienceStartDate={(e) => setExperienceStartDate(e.target.value)}
+          />
+          <p className="font-bold">End Date</p>
+          <ExperienceEndDateFunc
+            experienceEndDate={experienceEndDate}
+            updateExperienceEndDate={(e) => setExperienceEndDate(e.target.value)}
+          />
+          <p className="font-bold">Details</p>
+          <DescriptionFunc
+            description={description}
+            updateDescription={(e) => setDescription(e.target.value)}
+          />
+        </div>
 
-      <p>{fullName}</p>
-      <p>{address}</p>
-      <p>{phoneNo}</p>
-      <p>{email}</p>
-      <p>{objective}</p>
-      <br />
-      <p>{school}</p>
-      <p>{degree}</p>
-      <p>{startDate}</p>
-      <p>{endDate}</p>
-      <br />
-      <p>{companyName}</p>
-      <p>{position}</p>
-      <p>{experienceStartDate}</p>
-      <p>{experienceEndDate}</p>
-      <p>{description}</p>
-      <br />
-      <p>{skillName}: {skillDetails}</p>
-      <br />
-      <p>{projectName}: {projectDetails}</p>
-      <br />
-      <p>{referenceName}: {referenceTitle} Mail:{referenceMail}</p>
+        <div className="p-4 bg-slate-200 rounded-md mt-2">
+          <h1 className="font-bold text-xl text-center">Skills 🔨</h1>
+          <p className="font-bold">Skill</p>
+          <SkillNameFunc
+            skillName={skillName}
+            updateSkillName={(e) => setSkillName(e.target.value)}
+          />
+          <p className="font-bold">Details</p>
+          <SkillDetailsFunc
+            skillDetails={skillDetails}
+            updateSkillDetails={(e) => setSkillDetails(e.target.value)}
+          />
+        </div>
+        
+        <div className="p-4 bg-slate-200 rounded-md mt-2">
+          <h1 className="font-bold text-xl text-center">Projects 🏢</h1>
+          <p className="font-bold">Project Name</p>
+          <ProjectNameFunc
+            projectName={projectName}
+            updateProjectName={(e) => setProjectName(e.target.value)}
+          />
+          <p className="font-bold">Project Details</p>
+          <ProjectDetailsFunc
+            projectDetails={projectDetails}
+            updateProjectDetails={(e) => setProjectDetails(e.target.value)}
+          />
+        </div>
+        <div className="p-4 bg-slate-200 rounded-md mt-2">
+          <h1 className="font-bold text-xl text-center">References 👨‍🎓</h1>
+          <p className="font-bold">Reference Name</p>
+          <ReferenceName
+            referenceName={referenceName}
+            updateReferenceName={(e) => setReferenceName(e.target.value)}
+          />
+          <p className="font-bold">Reference Title</p>
+          <ReferenceTitle
+            referenceTitle={referenceTitle}
+            updateReferenceTitle={(e) => setReferenceTitle(e.target.value)}
+          />
+          <p className="font-bold">Reference Mail</p>
+          <ReferenceMail
+            referenceMail={referenceMail}
+            updateReferenceMail={(e) => setReferenceMail(e.target.value)}
+          />
+        </div>
+        
+      </div>
+      <div className="col-span-5">
+        <p>{fullName}</p>
+        <p>{address}</p>
+        <p>{phoneNo}</p>
+        <p>{email}</p>
+        <p>{objective}</p>
+        <br />
+        <p>{school}</p>
+        <p>{degree}</p>
+        <p>{startDate}</p>
+        <p>{endDate}</p>
+        <br />
+        <p>{companyName}</p>
+        <p>{position}</p>
+        <p>{experienceStartDate}</p>
+        <p>{experienceEndDate}</p>
+        <p>{description}</p>
+        <br />
+        <p>{skillName}: {skillDetails}</p>
+        <br />
+        <p>{projectName}: {projectDetails}</p>
+        <br />
+        <p>{referenceName}: {referenceTitle} Mail:{referenceMail}</p>
+      </div>
+      
     </div>
   )
 }
