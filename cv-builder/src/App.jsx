@@ -94,23 +94,23 @@ export default function App () {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-7 gap-4 bg-slate-100 min-h-screen">
-      <div className="md:col-span-2 p-2 bg-customBlue rounded-md overflow-auto shadow-md h-screen">
+      <div className="md:col-span-2 p-2 bg-customBlue rounded-md overflow-auto md:overflow-auto shadow-md h-screen">
         <h1 className="text-2xl md:text-3xl text-center font-bold shadow-md p-4 text-white">CV BUILDER</h1>
         <br />
-        
+  
         {/* General Info */}
         <div className="p-4 bg-slate-200 rounded-md shadow-md">
           <h1 className="font-bold text-lg md:text-xl text-center">General Info 🪪</h1>
           <hr className="border-gray-500 my-2" />
           <p className="font-bold">Full Name</p>
           <FullNameFunc fullName={fullName} updateFullName={(e) => setFullName(e.target.value)} />
-          
+  
           <p className="font-bold">Address</p>
           <AddressFunc address={address} updateAddress={(e) => setAddress(e.target.value)} />
   
           <p className="font-bold">Phone No</p>
           <PhoneNOFunc phoneNo={phoneNo} updatePhoneNo={(e) => setPhoneNo(e.target.value)} />
-          
+  
           <p className="font-bold">Email</p>
           <EmailFunc email={email} updateEmail={(e) => setEmail(e.target.value)} />
   
@@ -161,7 +161,7 @@ export default function App () {
           <hr className="border-gray-500 my-2" />
           <p className="font-bold">Skill</p>
           <SkillNameFunc skillName={skillName} updateSkillName={(e) => setSkillName(e.target.value)} />
-          
+  
           <p className="font-bold">Details</p>
           <SkillDetailsFunc skillDetails={skillDetails} updateSkillDetails={(e) => setSkillDetails(e.target.value)} />
   
@@ -205,7 +205,7 @@ export default function App () {
       </div>
   
       {/* CV Preview Section */}
-      <div ref={cvRef} className="md:col-span-5 bg-white shadow-md overflow-auto h-screen">
+      <div ref={cvRef} className="md:col-span-5 bg-white shadow-md overflow-auto md:h-screen">
         <div className="text-center bg-customBlue py-6 text-white">
           <p className="text-3xl md:text-4xl my-4 font-bold">{fullName}</p>
           <p>{address} \ {phoneNo} \ {email}</p>
@@ -250,6 +250,7 @@ export default function App () {
         </div>
       </div>
     </div>
- );
+  );
+  
 }
   
