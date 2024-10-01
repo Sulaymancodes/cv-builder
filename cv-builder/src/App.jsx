@@ -186,7 +186,7 @@ export default function App () {
           <SkillDetailsFunc skillDetails={skillDetails} updateSkillDetails={(e) => setSkillDetails(e.target.value)} />
 
           <div className="text-center">
-            <button onClick={handleSkillSubmit} className="rounded-lg w-full bg-sky-500 hover:bg-sky-700 p-2 mt-2">Add Skill</button>
+            <button onClick={handleSkillSubmit} className="rounded-lg w-full bg-customBlue text-white hover:bg-sky-700 p-2 mt-2">Add Skill</button>
           </div>
         </div>
 
@@ -201,7 +201,7 @@ export default function App () {
           <ProjectDetailsFunc projectDetails={projectDetails} updateProjectDetails={(e) => setProjectDetails(e.target.value)} />
 
           <div className="text-center">
-            <button onClick={handleProjectSubmit} className="rounded-lg w-full bg-sky-500 hover:bg-sky-700 p-2 mt-2">Add Project</button>
+            <button onClick={handleProjectSubmit} className="rounded-lg w-full bg-customBlue text-white hover:bg-sky-700 p-2 mt-2">Add Project</button>
           </div>
         </div>
 
@@ -219,7 +219,7 @@ export default function App () {
           <ReferenceMail referenceMail={referenceMail} updateReferenceMail={(e) => setReferenceMail(e.target.value)} />
 
           <div className="text-center">
-            <button onClick={handleReferenceSubmit} className="rounded-lg w-full bg-sky-500 hover:bg-sky-700 p-2 mt-2">Add Reference</button>
+            <button onClick={handleReferenceSubmit} className="rounded-lg w-full bg-customBlue text-white hover:bg-sky-700 p-2 mt-2">Add Reference</button>
           </div>
         </div>
       </div>
